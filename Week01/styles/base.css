@@ -18,6 +18,11 @@ header {
   font-weight: bold;
 }
 
+.highlight-name {
+  color: #fcd116; /* or any color you want */
+  font-weight: bold;
+}
+
 nav {
   display: flex;
   justify-content: center;
