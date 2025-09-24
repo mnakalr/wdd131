@@ -1,0 +1,141 @@
+/* ===== Base ===== */
+:root{
+  --bg: #0f172a;       /* slate-900 */
+  --panel:#111827;     /* gray-900 */
+  --ink: #e5e7eb;      /* gray-200 */
+  --muted:#cbd5e1;     /* slate-300 */
+  --accent:#60a5fa;    /* blue-400 */
+  --radius: 14px;
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html, body { height: 100%; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--bg);
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+/* ===== Header & Nav ===== */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding: .75rem 1rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: .5rem;
+  align-items: center;
+}
+
+.brand h1 {
+  margin: 0;
+  font-family: Merriweather, Georgia, serif;
+  font-size: clamp(1.15rem, 2vw + .5rem, 1.5rem);
+}
+
+/* Hamburger (mobile shows; hidden in large CSS) */
+.menu-toggle {
+  appearance: none;
+  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(255,255,255,0.06);
+  color: var(--ink);
+  padding: .4rem .7rem;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+.menu-toggle:hover { border-color: rgba(96,165,250,0.6); }
+
+/* Nav (Flex requirement) */
+.site-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  /* Mobile default: hidden until toggled */
+  display: none;
+  flex-direction: column;            /* stack vertically in mobile */
+  gap: .35rem;
+  padding-top: .5rem;
+}
+
+.site-nav a {
+  color: var(--ink);
+  text-decoration: none;
+  display: block;
+  padding: .55rem .8rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+  transition: transform 120ms ease, background 120ms ease, border-color 120ms ease;
+}
+
+/* Hover effect (required) */
+.site-nav a:hover,
+.site-nav a:focus {
+  transform: translateY(-1px);
+  border-color: rgba(96,165,250,0.55);
+  background: linear-gradient(180deg, rgba(96,165,250,0.22), rgba(96,165,250,0.12));
+  outline: none;
+}
+
+/* When JS toggles .open on nav */
+.site-nav.open ul {
+  display: flex;
+}
+
+/* ===== Main & Gallery ===== */
+main {
+  width: min(100%, 980px);
+  margin: 1rem auto;
+  padding: 0 1rem;
+}
+
+main h2 {
+  margin: 0 0 .75rem;
+  font-family: Merriweather, Georgia, serif;
+  font-size: clamp(1.1rem, 1rem + 1.6vw, 1.6rem);
+}
+
+/* Grid gallery: 1 col on mobile */
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr;   /* one column mobile */
+  gap: .9rem;
+}
+
+.gallery figure {
+  margin: 0;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.gallery figcaption {
+  padding: .6rem .8rem;
+  color: var(--muted);
+}
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  padding: .9rem 1rem 1.2rem;
+  color: var(--muted);
+  border-top: 1px solid rgba(255,255,255,0.08);
+}

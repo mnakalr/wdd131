@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Temple Album — WDD 131</title>
+
+  <meta name="description" content="WDD 131 Temple Album with a responsive hamburger menu and grid-based gallery." />
+  <meta name="author" content="Lukas Nakale" />
+
+  <!-- Google Fonts: heading + body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Merriweather:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- CSS: mobile first, then large view -->
+  <link rel="stylesheet" href="styles/temples.css" />
+  <link rel="stylesheet" href="styles/temples-large.css" media="(min-width: 768px)" />
+
+  <!-- JS deferred -->
+  <script src="scripts/temples.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <h1>Temple Album</h1>
+    </div>
+
+    <!-- Hamburger (mobile only) -->
+    <button id="menu-toggle"
+            class="menu-toggle"
+            aria-label="Open menu"
+            aria-controls="primary-nav"
+            aria-expanded="false">☰</button>
+
+    <nav id="primary-nav" class="site-nav" aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#" data-filter="old">Old</a></li>
+        <li><a href="#" data-filter="new">New</a></li>
+        <li><a href="#" data-filter="large">Large</a></li>
+        <li><a href="#" data-filter="small">Small</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Temple Gallery</h2>
+
+    <!-- Gallery grid -->
+    <section id="gallery" class="gallery">
+      <!-- 9+ figures; OK to duplicate a placeholder early in the course -->
+      <figure data-year="2017" data-size="small">
+        <img src="images/cedar-city-temple.jpg" alt="Cedar City Utah Temple" loading="lazy" width="600" height="600" />
+        <figcaption>Cedar City Utah Temple</figcaption>
+      </figure>
+
+      <figure data-year="2025" data-size="small">
+        <img src="images/farmington-temple.jpg" alt="Farmington New Mexico Temple" loading="lazy" width="600" height="600" />
+        <figcaption>Farmington New Mexico Temple</figcaption>
+      </figure>
+
+      <figure data-year="2025" data-size="small">
+        <img src="images/grand-junction-temple.jpg" alt="Grand Junction Colorado Temple" loading="lazy" width="600" height="600" />
+        <figcaption>Grand Junction Colorado Temple</figcaption>
+      </figure>
+
+      <figure data-year="1956" data-size="large">
+        <img src="images/los-angeles-temple.jpg" alt="Los Angeles California Temple" loading="lazy" width="600" height="600" />
+        <figcaption>Los Angeles California Temple</figcaption>
+      </figure>
+
+      <figure data-year="2016" data-size="large">
+        <img src="images/provo-city-center-temple.jpg" alt="Provo City Center Temple" loading="lazy" width="600" height="600" />
+        <figcaption>Provo City Center Temple</figcaption>
+      </figure>
+
+      <figure data-year="1893" data-size="large">
+        <img src="images/salt-lake-temple.jpg" alt="Salt Lake Temple" loading="lazy" width="600" height="600" />
+        <figcaption>Salt Lake Temple</figcaption>
+      </figure>
+
+      <figure data-year="1974" data-size="large">
+        <img src="images/washington-dc-temple.jpg" alt="Washington D.C. Temple" loading="lazy" width="600" height="600" />
+        <figcaption>Washington D.C. Temple</figcaption>
+      </figure>
+
+      <figure data-year="2016" data-size="small">
+        <img src="images/star-valley-temple.jpg" alt="Star Valley Wyoming Temple" loading="lazy" width="600" height="600" />
+        <figcaption>Star Valley Wyoming Temple</figcaption>
+      </figure>
+
+      <figure data-year="2009" data-size="large">
+        <img src="images/oquirrh-mountain-temple.jpg" alt="Oquirrh Mountain Utah Temple" loading="lazy" width="600" height="600" />
+        <figcaption>Oquirrh Mountain Utah Temple</figcaption>
+      </figure>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="currentyear"></span> Lukas Nakale • Namibia</p>
+    <p id="lastModified"></p>
+  </footer>
+</body>
+</html>

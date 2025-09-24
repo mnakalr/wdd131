@@ -1,0 +1,30 @@
+/* Large view overrides/enhancements */
+
+/* Hide hamburger on large screens */
+.menu-toggle { display: none; }
+
+/* Nav: show horizontally, always visible */
+.site-nav ul {
+  display: flex !important;
+  flex-direction: row;
+  gap: .5rem;
+  padding-top: 0;
+}
+
+/* Constrain and center main; more space */
+main {
+  width: min(100%, 1100px);
+  margin: 1.5rem auto;
+}
+
+/* Gallery: multi-column grid on large screens */
+.gallery {
+  /* Choose either a fixed count or an auto-fit layout: */
+  /* Option A: fixed 3 columns */
+  grid-template-columns: repeat(3, 1fr);
+
+  /* Option B (comment out A): fluid minmax columns
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  */
+  gap: 1rem;
+}
